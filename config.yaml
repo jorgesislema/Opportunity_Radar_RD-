@@ -1,0 +1,65 @@
+ai:
+  api_key_placeholder: YOUR_API_KEY_HERE
+  base_url: https://openrouter.ai/api/v1
+  model: nvidia/nemotron-3-ultra-550b-a55b:free
+api:
+  endpoint: procesos
+  max_pages: 50
+  timeout: 30
+  url: https://datosabiertos.dgcp.gob.do/api-dgcp/v1
+filters:
+  keywords:
+  - innovacion
+  - tecnologia
+  - investigacion
+  - desarrollo
+  - software
+  - hardware
+  - digital
+  - sistemas
+  - plataforma
+  - aplicacion
+  - inteligencia artificial
+  - machine learning
+  - data
+  - analytics
+  - cloud
+  - ciberseguridad
+  - blockchain
+  min_amount: 0
+output:
+  path: ./output
+scraper:
+  base_url: https://comunidad.comprasdominicana.gob.do
+  delay_between_requests: 2.0
+  detail_endpoint: /Public/Tendering/OpportunityDetail/Index
+  download_certificate_endpoint: /Public/Tendering/SigefInfoView/DownloadCertificateDocument
+  download_file_endpoint: /Public/Tendering/OpportunityDetail/DownloadFile
+  exclude_keywords:
+  - "\xC3\xA9tica"
+  - etica
+  - compromiso
+  - carta
+  - acta
+  - certificado
+  - convocatoria
+  - anuncio
+  - aviso
+  - plano
+  - dibujo
+  max_pdf_pages: 50
+  max_pdfs_per_process: 5
+  max_workers: 3
+  pdf_timeout: 60
+  priority_keywords:
+  - pliego
+  - base
+  - "t\xC3\xA9rmino"
+  - termino
+  - "especificaci\xC3\xB3n"
+  - especificacion
+  - referencia
+  - "t\xC3\xA9rminos"
+  - terminos
+  storage_path: ./data/scraped_pdfs
+  timeout: 30
